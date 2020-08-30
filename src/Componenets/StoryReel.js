@@ -13,9 +13,10 @@ function StoryReel() {
 
       <Story
         image="https://images.pexels.com/photos/4280015/pexels-photo-4280015.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260"
-        profilesrc="https://yt3.ggpht.com/a/AATXAJydjgDHqK3vz4iHkrPZjHSsjwh1aPsqOwxHCZ_ISA=s48-c-k-c0xffffffff-no-rj-mo"
+        profilesrc="https://lh3.googleusercontent.com/a-/AOh14GiZzCOabcRPqeBa7JmRCuLVVUkuqw4T8nKmnwgG=s88"
         title="Coding Train"
       />
+
       <Story
         image="https://images.pexels.com/photos/4321501/pexels-photo-4321501.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260"
         profilesrc="https://yt3.ggpht.com/a/AATXAJydjgDHqK3vz4iHkrPZjHSsjwh1aPsqOwxHCZ_ISA=s48-c-k-c0xffffffff-no-rj-mo"

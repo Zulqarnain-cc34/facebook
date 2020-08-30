@@ -4,9 +4,10 @@ import "./App.css";
 import Header from "./Componenets/Header";
 import SideBar from "./Componenets/SideBar";
 import Feed from "./Componenets/Feed";
+
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Header />
       <div className="app__body">
         <SideBar />

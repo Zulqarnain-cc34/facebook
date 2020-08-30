@@ -1,0 +1,63 @@
+.messagesender {
+    display: flex;
+    margin-top: 30px;
+    background-color: white;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75);
+    width: 100%;
+}
+
+.messagesender__bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.messagesender__options {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    color: gray;
+    margin: 5px;
+    align-items: center;
+}
+
+.messagesender__options>h3 {
+    margin-left: 10px;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.messagesender__options:hover {
+    background-color: #eff2f5;
+    border-radius: 20px;
+}
+
+.messagesender__top {
+    display: flex;
+    border-bottom: 1px solid #eff2f5;
+    padding: 15px;
+}
+
+.messagesender__top>form {
+    display: flex;
+    flex: 1;
+}
+
+.messagesender__top>form>input {
+    outline-width: 0;
+    padding: 5px 20px;
+    border: none;
+    margin: 0px 10px;
+    border-radius: 999px;
+    background-color: #eff2f5;
+}
+
+.messagesender__top>form>button {
+    display: none;
+}
+
+.messagesender__input {
+    flex: 1;
+}
