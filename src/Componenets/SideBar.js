@@ -8,13 +8,12 @@ import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
 import SideBarRow from "./SideBarRow";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import StorefrontIcon from "@material-ui/icons/Storefront";
+import { UseStateValue } from "../StateProvider";
 function SideBar() {
+  const [{ user }, dispatch] = UseStateValue();
   return (
     <div className="sidebar">
-      <SideBarRow
-        src="https://yt3.ggpht.com/a/AATXAJydjgDHqK3vz4iHkrPZjHSsjwh1aPsqOwxHCZ_ISA=s48-c-k-c0xffffffff-no-rj-mo"
-        title="Clever Programmer"
-      />
+      <SideBarRow src={user?.photoURL} title={user.displayName} />
       <SideBarRow
         Icon={LocalHospitalIcon}
         title="Covid-19 Information Center"

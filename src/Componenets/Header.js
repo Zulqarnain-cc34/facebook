@@ -12,10 +12,13 @@ import AddIcon from "@material-ui/icons/Add";
 import SubscriptionsOutlinedIcon from "@material-ui/icons/SubscriptionsOutlined";
 import { IconButton } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { UseStateValue } from "../StateProvider";
 
 function Header() {
+  const [{ user }, dispatch] = UseStateValue();
+
   return (
-    <div class="header">
+    <div className="header">
       <div className="header__left">
         <img
           className="facebook__logo"
@@ -47,8 +50,8 @@ function Header() {
 
       <div className="header__right">
         <div className="header__info">
-          <Avatar />
-          <h4>Programmer</h4>
+          <Avatar src={user?.photoURL} />
+          <h4>{user.displayName}</h4>
         </div>
 
         <IconButton>

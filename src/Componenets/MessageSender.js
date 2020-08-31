@@ -1,44 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../Components css/Messagesender.css";
 import { Avatar } from "@material-ui/core";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
-import { auth, provider } from "../firebase";
 import { UseStateValue } from "../StateProvider";
-import { actionTypes } from "../reducer";
+import db from "../firebase";
+import firebase from "firebase";
 function MessageSender() {
+  const [{ user }, dispatch] = UseStateValue();
   const [input, setinput] = useState("");
   const [imageURL, setimageURL] = useState("");
-  const [, dispatch] = UseStateValue("");
-  console.log(input, imageURL);
-  auth
-    .signInWithPopup(provider)
-    .then((res) =>
-      dispatch({
-        type: actionTypes.SET_USER,
-        user: res.user,
-      })
-    )
-    .then((result) => console.log(result))
-    .catch((err) => {
-      console.log(err);
-    });
+
   const handlesubmit = (e) => {
     e.preventDefault();
+    db.collection("posts").add({
+      message: input,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      username: user.displayName,
+      image: imageURL,
+      profilePic: user.photoURL,
+    });
+
     setinput("");
     setimageURL("");
   };
   return (
     <div className="messagesender">
       <div className="messagesender__top">
-        <Avatar />
+        <Avatar src={user?.photoURL} />
         <form action="">
           <input
             onChange={(e) => setinput(e.target.value)}
             value={input}
             className="messagesender__input"
-            placeholder="what's on your mind?"
+            placeholder={`what's on your mind? ${user?.displayName}?`}
           />
           <input
             onChange={(e) => setimageURL(e.target.value)}
